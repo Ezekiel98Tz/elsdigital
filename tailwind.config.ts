@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				portfolio: {
+					yellow: 'hsl(var(--portfolio-yellow))',
+					'yellow-glow': 'hsl(var(--portfolio-yellow-glow))',
+					dark: 'hsl(var(--portfolio-dark))',
+					darker: 'hsl(var(--portfolio-darker))',
+					text: 'hsl(var(--portfolio-text))',
+					muted: 'hsl(var(--portfolio-muted))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +75,20 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-yellow': 'var(--gradient-yellow)',
+				'gradient-dark': 'var(--gradient-dark)',
+				'gradient-card': 'var(--gradient-card)'
+			},
+			boxShadow: {
+				'yellow': 'var(--shadow-yellow)',
+				'card': 'var(--shadow-card)',
+				'glow': 'var(--shadow-glow)'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+				'spring': 'var(--transition-spring)'
 			},
 			keyframes: {
 				'accordion-down': {
