@@ -23,9 +23,9 @@ const Home = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/Ezekiel98Tz", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/ezekiel-sued-1a9577245", label: "LinkedIn" },
+    { icon: Mail, href: "info@elsdigital.com", label: "Email" },
   ];
 
   return (
@@ -37,12 +37,11 @@ const Home = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Hi, I'm{" "}
               <span className="bg-gradient-yellow bg-clip-text text-transparent">
-                Alex Chen
+                Ezekiel Sued
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              A passionate developer & designer building modern web experiences
-              that combine beautiful design with powerful functionality.
+             Web Developer & Digital Marketing Consultant helping businesses grow online with modern, scalable, and creative solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
@@ -128,7 +127,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground mb-4 md:mb-0">
-              © 2025 Alex Chen. Built with passion and modern tech.
+              © 2025 Ezekiel Sued. Built with passion and modern tech.
             </p>
             <div className="flex space-x-6">
               {socialLinks.map((link, index) => {

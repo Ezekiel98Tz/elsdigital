@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Simple form validation
@@ -28,14 +29,45 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+    try {
+      // EmailJS configuration
+      const serviceId = 'service_ztm2u4p';
+      const templateId = 'template_5orqjmf';
+      const publicKey = 'UMZDYizejvTcEPU7A';
 
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+      // Template parameters for EmailJS
+      const templateParams = {
+        name: formData.name,        // Changed from 'from_name' to match EmailJS template
+        email: formData.email,      // Changed from 'from_email' to match EmailJS template
+        message: formData.message,  // This matches the EmailJS template
+        title: formData.subject || 'Contact Form Submission', // Added title parameter for EmailJS template
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+
+        // Reset form
+        setFormData({ name: "", email: "", message: "" });
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -49,27 +81,27 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@alexchen.dev",
+      value: "Info@elsdigital.com",
       href: "mailto:hello@alexchen.dev",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+1 (255) 620-535-592",
+      href: "tel:+255620535592",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Tanzania, Dar es salaam",
       href: "#",
     },
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub", handle: "@alexchen" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", handle: "Alex Chen" },
-    { icon: Twitter, href: "#", label: "Twitter", handle: "@alexchen_dev" },
+    { icon: Github, href: "https://github.com/Ezekiel98Tz", label: "GitHub", handle: "@alexchen" },
+    { icon: Linkedin, href: "https://linkedin.com/in/ezekiel-sued-1a9577245", label: "LinkedIn", handle: "Ezekiel Sued" },
+    { icon: Instagram, href: "https://www.instagram.com/_elsdigital", label: "Instagram", handle: "@_elsdigital" },
   ];
 
   return (

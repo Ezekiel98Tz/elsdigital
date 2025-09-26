@@ -1,18 +1,18 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, Award, BookOpen, Users } from "lucide-react";
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/eze.jpeg";
 
 const About = () => {
   const stats = [
-    { icon: Award, label: "Years Experience", value: "5+" },
-    { icon: BookOpen, label: "Projects Completed", value: "50+" },
-    { icon: Users, label: "Happy Clients", value: "30+" },
+    { icon: Award, label: "Years Experience", value: "3+" },
+    { icon: BookOpen, label: "Projects Completed", value: "20+" },
+    { icon: Users, label: "Happy Clients", value: "10+" },
   ];
 
   const skills = [
     { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Next.js"] },
-    { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "MongoDB"] },
+    { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "PHP"] },
     { category: "Design", items: ["Figma", "Adobe Creative Suite", "UI/UX Design", "Prototyping"] },
     { category: "Tools", items: ["Git", "Docker", "AWS", "Vercel"] },
   ];
@@ -28,27 +28,32 @@ const About = () => {
                 About <span className="bg-gradient-yellow bg-clip-text text-transparent">Me</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                I'm Alex Chen, a passionate full-stack developer and designer based in San Francisco. 
-                I specialize in creating beautiful, functional web experiences that solve real-world problems.
+                I’m Ezekiel Sued — a Web Developer & Digital Marketing Consultant passionate about building web experiences that don’t just look great, 
+                but actually move the needle for businesses.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                With over 5 years of experience in web development, I've had the privilege of working 
-                with startups and established companies to bring their digital visions to life. 
-                I believe in the power of clean code, thoughtful design, and collaborative teamwork.
+                I combine my background in computer science with hands-on experience in digital strategy, design, 
+                and branding to deliver solutions that help companies grow online.
+                Over the years, I’ve partnered with startups, HR firms, law practices, and small businesses — creating websites, dashboards, and 
+                digital platforms that are both scalable and results-driven.
+
+                For me, it’s not just about code or design. 
+                It’s about helping clients stand out, attract the right audience, and achieve measurable impact.
+
               </p>
-              <Button
+              {/* <Button
                 className="bg-gradient-yellow text-primary-foreground shadow-yellow hover:shadow-glow"
                 size="lg"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
-              </Button>
+              </Button> */}
             </div>
             <div className="relative">
               <div className="relative z-10">
                 <img
                   src={profileImage}
-                  alt="Alex Chen"
+                  alt="Ezekiel Sued"
                   className="w-full max-w-md mx-auto rounded-2xl shadow-card"
                 />
               </div>
@@ -121,14 +126,12 @@ const About = () => {
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Beyond the Code</h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                When I'm not coding, you can find me exploring the latest design trends, 
-                contributing to open-source projects, or hiking the beautiful trails around 
-                the Bay Area. I'm passionate about continuous learning and staying at the 
-                forefront of web technology.
+                When I’m not deep in SQL queries or refining a web build, you’ll probably find me experimenting with new design tools, 
+                testing digital marketing strategies, or creating content around tech and business growth.
               </p>
               <p className="text-lg text-muted-foreground">
-                I believe that great software is built by great teams, and I'm always excited 
-                to collaborate with other passionate developers and designers.
+                At the core, I believe the best projects are born from collaboration. 
+                That’s why I love working with teams, clients, and other creatives to turn complex ideas into simple, powerful solutions.
               </p>
             </div>
           </Card>
