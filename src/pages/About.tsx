@@ -1,54 +1,54 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, Award, BookOpen, Users } from "lucide-react";
+import { Award, BookOpen, Users } from "lucide-react";
 import profileImage from "@/assets/eze.jpeg";
+import Footer from "@/components/Footer";
 
 const About = () => {
   const stats = [
-    { icon: Award, label: "Years Experience", value: "3+" },
-    { icon: BookOpen, label: "Projects Completed", value: "20+" },
-    { icon: Users, label: "Happy Clients", value: "10+" },
+    { icon: Award, label: "Years in Digital", value: "3+" },
+    { icon: BookOpen, label: "Projects Delivered", value: "20+" },
+    { icon: Users, label: "Clients Served", value: "10+" },
   ];
 
   const skills = [
-    { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Next.js"] },
+    { category: "Frontend", items: ["React", "TypeScript", "Next.js", "Tailwind CSS"] },
     { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "PHP"] },
-    { category: "Design", items: ["Figma", "Adobe Creative Suite", "UI/UX Design", "Prototyping"] },
+    { category: "Design", items: ["Figma", "UI/UX", "Brand Systems", "Creative Direction"] },
     { category: "Tools", items: ["Git", "Docker", "AWS", "Vercel"] },
   ];
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">
-      {/* Hero Section */}
+      {/* Intro Section */}
       <section className="px-6 pb-16">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text Section */}
             <div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                About <span className="bg-gradient-yellow bg-clip-text text-transparent">Me</span>
+                About <span className="bg-gradient-yellow bg-clip-text text-transparent">Els Digital</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                I’m Ezekiel Sued — a Web Developer & Digital Marketing Consultant passionate about building web experiences that don’t just look great, 
-                but actually move the needle for businesses.
+                Els Digital is a web development and creative studio led by{" "}
+                <span className="font-semibold text-primary">Ezekiel Sued</span> — a
+                developer and digital strategist helping brands turn complex ideas into
+                simple, effective digital experiences.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                I combine my background in computer science with hands-on experience in digital strategy, design, 
-                and branding to deliver solutions that help companies grow online.
-                Over the years, I’ve partnered with startups, HR firms, law practices, and small businesses — creating websites, dashboards, and 
-                digital platforms that are both scalable and results-driven.
-
-                For me, it’s not just about code or design. 
-                It’s about helping clients stand out, attract the right audience, and achieve measurable impact.
-
+                We combine technical precision with strategic design to build web platforms
+                that convert, communicate, and scale. From HR and law firms to tech startups,
+                our focus remains the same — creating work that’s purposeful, aesthetic,
+                and measurable.
               </p>
-              {/* <Button
-                className="bg-gradient-yellow text-primary-foreground shadow-yellow hover:shadow-glow"
-                size="lg"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </Button> */}
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Whether it’s a landing page that drives sales or a full digital platform,
+                we believe every interaction should build trust and move your business
+                forward.
+              </p>
             </div>
+
+            {/* Image Section */}
             <div className="relative">
               <div className="relative z-10">
                 <img
@@ -70,7 +70,7 @@ const About = () => {
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
-                <Card 
+                <Card
                   key={index}
                   className="p-8 text-center bg-gradient-card border-border shadow-card hover:shadow-glow transition-all duration-300"
                 >
@@ -90,22 +90,22 @@ const About = () => {
       <section className="px-6 pb-16">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Capabilities</h2>
             <p className="text-xl text-muted-foreground">
-              Technologies and tools I use to bring ideas to life
+              The tools and disciplines that drive every project
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skillGroup, index) => (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 bg-gradient-card border-border shadow-card hover:shadow-glow transition-all duration-300"
               >
                 <h3 className="text-xl font-semibold mb-4 text-primary">{skillGroup.category}</h3>
                 <div className="space-y-2">
                   {skillGroup.items.map((skill, skillIndex) => (
-                    <div 
+                    <div
                       key={skillIndex}
                       className="px-3 py-2 bg-background/50 rounded-lg text-sm border border-border"
                     >
@@ -119,24 +119,26 @@ const About = () => {
         </div>
       </section>
 
-      {/* Personal Section */}
+      {/* Philosophy Section */}
       <section className="px-6">
         <div className="container mx-auto">
           <Card className="p-12 bg-gradient-dark border-primary/20 shadow-yellow">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Beyond the Code</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Philosophy</h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                When I’m not deep in SQL queries or refining a web build, you’ll probably find me experimenting with new design tools, 
-                testing digital marketing strategies, or creating content around tech and business growth.
+                Technology is only as good as the story it tells. We design experiences that
+                feel human, communicate clearly, and inspire action.
               </p>
               <p className="text-lg text-muted-foreground">
-                At the core, I believe the best projects are born from collaboration. 
-                That’s why I love working with teams, clients, and other creatives to turn complex ideas into simple, powerful solutions.
+                Every project begins with strategy and ends with measurable results.
+                Because for us, good design is not just visual — it’s functional, scalable,
+                and meaningful.
               </p>
             </div>
           </Card>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

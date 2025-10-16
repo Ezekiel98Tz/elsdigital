@@ -7,15 +7,17 @@ import elsLogo from "@/assets/els.png";
 const Navigation = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLabel, setActiveLabel] = useState<string | null>(null);
 
   const navItems = [
     { path: "/", label: "Home" },
+    { path: "/services", label: "Services" },
     { path: "/portfolio", label: "Portfolio" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string, _label?: string) => location.pathname === path;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -26,21 +28,22 @@ const Navigation = () => {
             <img 
               src={elsLogo} 
               alt="ELS Digital" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
-            <span className="text-xl font-bold bg-gradient-yellow bg-clip-text text-transparent">
-              ELS Digital
-            </span>
+          <span className="text-xl font-bold bg-gradient-to-r from-white to-yellow-400 bg-clip-text text-transparent">
+            ELS DIGITAL
+          </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
-                key={item.path}
+                key={`${item.path}-${item.label}`}
                 to={item.path}
+                onClick={() => setActiveLabel(item.label)}
                 className={`transition-colors duration-300 hover:text-primary ${
-                  isActive(item.path)
+                  isActive(item.path, item.label)
                     ? "text-primary font-medium"
                     : "text-muted-foreground"
                 }`}
@@ -67,11 +70,11 @@ const Navigation = () => {
             <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
                 <Link
-                  key={item.path}
+                  key={`${item.path}-${item.label}`}
                   to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => { setActiveLabel(item.label); setIsMenuOpen(false); }}
                   className={`transition-colors duration-300 hover:text-primary ${
-                    isActive(item.path)
+                    isActive(item.path, item.label)
                       ? "text-primary font-medium"
                       : "text-muted-foreground"
                   }`}

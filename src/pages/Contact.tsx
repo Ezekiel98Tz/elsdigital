@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from 'emailjs-com';
 
@@ -87,7 +88,7 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (255) 620-535-592",
+      value: "+255 (620)-535-592",
       href: "tel:+255620535592",
     },
     {
@@ -99,7 +100,7 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/Ezekiel98Tz", label: "GitHub", handle: "@alexchen" },
+    { icon: Github, href: "https://github.com/Ezekiel98Tz", label: "GitHub", handle: "@elsdigital" },
     { icon: Linkedin, href: "https://linkedin.com/in/ezekiel-sued-1a9577245", label: "LinkedIn", handle: "Ezekiel Sued" },
     { icon: Instagram, href: "https://www.instagram.com/_elsdigital", label: "Instagram", handle: "@_elsdigital" },
   ];
@@ -114,6 +115,7 @@ const Contact = () => {
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Have a project in mind or want to discuss opportunities? 
+            I'd love to hear from you. Let's build something amazing together.
             I'd love to hear from you. Let's build something amazing together.
           </p>
         </div>
@@ -245,6 +247,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
