@@ -15,6 +15,7 @@ import {
   Globe,
   Filter
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
 
 // Import images
@@ -118,6 +119,14 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">
+      <Helmet>
+        <title>Portfolio | ELS Digital</title>
+        <meta name="description" content="Explore our collection of successful web development, mobile app, and digital design projects that showcase our expertise and innovation." />
+        <meta property="og:title" content="ELS Digital Portfolio" />
+        <meta property="og:description" content="View our portfolio of successful digital projects and see how we help brands grow online." />
+        <meta property="og:image" content="/preview.svg" />
+        <meta property="og:url" content="https://elsdigital.com/portfolio" />
+      </Helmet>
       {/* Hero Section */}
       <section className="px-6 pb-16">
         <div className="container mx-auto text-center">
@@ -129,10 +138,13 @@ const Portfolio = () => {
             mobile applications, and digital design. Each project represents our commitment to quality and innovation.
           </p>
           <Button 
+            asChild
             className="bg-gradient-yellow text-primary-foreground shadow-yellow hover:shadow-glow"
             size="lg"
           >
-            Start Your Project
+            <Link to="/contact">
+              Start Your Project
+            </Link>
           </Button>
         </div>
       </section>
@@ -310,7 +322,7 @@ const Portfolio = () => {
                 variant="outline"
                 className="border-primary/20 hover:bg-primary/10"
               >
-                <a href="/services">View Our Services</a>
+                <Link to="/services">View Our Services</Link>
               </Button>
             </div>
           </Card>

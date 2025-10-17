@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Code, Palette, Zap, ArrowRight } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
 
 const Home = () => {
@@ -27,6 +28,14 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>ELS DIGITAL — Web Development & Marketing That Converts</title>
+        <meta name="description" content="We design and develop high-impact websites and digital marketing solutions that help brands grow online. Simple. Strategic. Smart." />
+        <meta property="og:title" content="ELS Digital — Web Development & Marketing That Converts" />
+        <meta property="og:description" content="We create modern, fast, and beautiful websites designed to turn visitors into clients." />
+        <meta property="og:image" content="/preview.svg" />
+        <meta property="og:url" content="https://elsdigital.com/" />
+      </Helmet>
       {/* Hero Section */}
       <section className="pt-24 pb-20 px-6">
         <div className="container mx-auto text-center">

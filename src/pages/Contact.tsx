@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from 'emailjs-com';
@@ -100,13 +101,21 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/Ezekiel98Tz", label: "GitHub", handle: "@elsdigital" },
+    { icon: Github, href: "https://github.com/Ezekiel98Tz", label: "GitHub", handle: "@Ezekiel98Tz" },
     { icon: Linkedin, href: "https://linkedin.com/in/ezekiel-sued-1a9577245", label: "LinkedIn", handle: "Ezekiel Sued" },
     { icon: Instagram, href: "https://www.instagram.com/_elsdigital", label: "Instagram", handle: "@_elsdigital" },
   ];
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">
+      <Helmet>
+        <title>Contact | ELS Digital</title>
+        <meta name="description" content="Get in touch with ELS Digital for your web development and digital marketing needs. Let's build something amazing together." />
+        <meta property="og:title" content="Contact ELS Digital" />
+        <meta property="og:description" content="Ready to start your project? Contact us today and let's discuss how we can help your brand grow online." />
+        <meta property="og:image" content="/preview.svg" />
+        <meta property="og:url" content="https://elsdigital.com/contact" />
+      </Helmet>
       {/* Hero Section */}
       <section className="px-6 pb-16">
         <div className="container mx-auto text-center">

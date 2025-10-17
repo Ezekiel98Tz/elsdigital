@@ -12,6 +12,7 @@ import {
   Headphones
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
 
 const Services = () => {
@@ -30,7 +31,7 @@ const Services = () => {
       title: "Frontend Design",
       description: "Modern, responsive frontend interfaces that deliver exceptional user experiences across all platforms.",
       features: ["Responsive Design", "Interactive UI", "Performance Optimization", "Cross-Browser Compatibility"],
-      price: "TZS 300,000 - 5M+"
+      price: "TZS 300,000 - 2M+"
     },
     {
       id: 3,
@@ -70,7 +71,7 @@ const Services = () => {
       title: "Digital Marketing Services",
       description: "Comprehensive digital marketing strategies to boost your online presence and drive targeted traffic to your business.",
       features: ["SEO Optimization", "Social Media Marketing", "Content Strategy", "PPC Campaigns"],
-      price: "TZS 800,000 - 3M+"
+      price: "TZS 400,000 - 1M+"
     }
   ];
 
@@ -124,6 +125,14 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">
+      <Helmet>
+        <title>Services | ELS Digital</title>
+        <meta name="description" content="Explore our web development, digital marketing, and UI/UX design services built to elevate your brand." />
+        <meta property="og:title" content="ELS Digital Services" />
+        <meta property="og:description" content="Explore our professional web and marketing services that help brands grow online." />
+        <meta property="og:image" content="/preview.svg" />
+        <meta property="og:url" content="https://elsdigital.com/services" />
+      </Helmet>
       {/* Hero Section */}
       <section className="px-6 pb-16">
         <div className="container mx-auto text-center">
@@ -246,7 +255,7 @@ const Services = () => {
                 size="lg"
                 className="bg-gradient-yellow text-primary-foreground shadow-yellow hover:shadow-glow"
               >
-                <a href="/contact">Get Free Consultation</a>
+                <Link to="/contact">Get Free Consultation</Link>
               </Button>
               <Button
                 asChild
@@ -254,7 +263,7 @@ const Services = () => {
                 variant="outline"
                 className="border-primary/20 hover:bg-primary/10"
               >
-                <a href="/portfolio">View Our Work</a>
+                <Link to="/portfolio">View Our Work</Link>
               </Button>
             </div>
           </Card>

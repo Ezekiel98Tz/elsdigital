@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, BookOpen, Users } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import profileImage from "@/assets/eze.jpeg";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,14 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">
+      <Helmet>
+        <title>About | ELS Digital</title>
+        <meta name="description" content="Learn about ELS Digital, a web development and creative studio led by Ezekiel Sued, helping brands create effective digital experiences." />
+        <meta property="og:title" content="About ELS Digital" />
+        <meta property="og:description" content="Meet the team behind ELS Digital and discover our mission to help brands grow through strategic web development." />
+        <meta property="og:image" content="/preview.svg" />
+        <meta property="og:url" content="https://elsdigital.com/about" />
+      </Helmet>
       {/* Intro Section */}
       <section className="px-6 pb-16">
         <div className="container mx-auto">

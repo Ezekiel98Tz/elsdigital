@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
@@ -32,10 +32,10 @@ const NotFound = () => {
             size="lg"
             className="bg-gradient-yellow text-primary-foreground shadow-yellow hover:shadow-glow"
           >
-            <a href="/">
+            <Link to="/">
               <Home className="mr-2 h-5 w-5" />
               Back to Home
-            </a>
+            </Link>
           </Button>
           <Button
             asChild
